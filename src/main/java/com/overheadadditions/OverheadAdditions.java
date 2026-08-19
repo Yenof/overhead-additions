@@ -16,7 +16,7 @@ import java.awt.*;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Overhead Expansion"
+	name = "Overhead Additions"
 )
 public class OverheadAdditions extends Plugin
 {
@@ -29,31 +29,29 @@ public class OverheadAdditions extends Plugin
 	@Override
 	protected void startUp() throws Exception
 	{
-		log.debug("Example started!");
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-		log.debug("Example stopped!");
 	}
 
 	@Subscribe
 	public void onGameStateChanged(GameStateChanged gameStateChanged)
 	{
 	}
+
 	private String getColorHex(Color color)
 	{
-		if (color == null)
-		{
+		if (color == null) {
 			return null;
 		}
-
 		return String.format("%02x%02x%02x",
 				color.getRed(),
 				color.getGreen(),
 				color.getBlue());
 	}
+
 	@Subscribe
 	public void onChatMessage(ChatMessage event) {
 		String cleanedName = event.getName().replace('\u00A0', ' ');
@@ -105,10 +103,12 @@ public class OverheadAdditions extends Plugin
 				break;
 		}
 	}
+
 	private String cleanString(String message)
 	{
 		return message.replaceAll("CA_ID:\\d+\\|", "").replace("<br>", "\n").replace("<lt>", "<").replace("<gt>", ">").replace('\u00A0', ' ').replace("<at>", "@");
 	}
+
 	@Provides
 	OverheadAdditionsConfig provideConfig(ConfigManager configManager)
 	{

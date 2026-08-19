@@ -47,7 +47,9 @@ public interface OverheadAdditionsConfig extends Config
 			name = "Show Clan",
 			section = clanSection,
 			description = "Display Clan Chat above head."
-	)default boolean showClan() {return false;}
+	)default boolean showClan() {return false;
+	}
+
 	@ConfigItem(
 			keyName = "clanChatColor",
 			name = "Color",
@@ -58,28 +60,34 @@ public interface OverheadAdditionsConfig extends Config
 	default Color clanChatColor() {
 		return null;
 	}
+
 	@ConfigItem(
 			keyName = "friends",
 			name = "Show FC",
 			section = FC,
-			description = "Display Group Iron Chat above head."
-	)default boolean showFC() {return false;}
+			description = "Display Friends Chat above head."
+	)default boolean showFC() {return false;
+	}
+
 	@ConfigItem(
 			keyName = "friendsChatColor",
 			name = "Color",
 			section = FC,
-			description = "Configures the text color for clan GIM chat messages.",
+			description = "Configures the text color for Friends chat messages.",
 			position = 8
 	)
 	default Color FCChatColor() {
 		return null;
 	}
+
 	@ConfigItem(
 			keyName = "GIM",
 			name = "Show GIM",
 			section = GIMSection,
 			description = "Display Group Iron Chat above head."
-	)default boolean showGIM() {return false;}
+	)default boolean showGIM() {return false;
+	}
+
 	@ConfigItem(
 			keyName = "clanGimChatColor",
 			name = "Color",
