@@ -4,7 +4,7 @@ import net.runelite.client.config.*;
 
 import java.awt.*;
 
-@ConfigGroup("example")
+@ConfigGroup("OverheadAdditions")
 public interface OverheadAdditionsConfig extends Config
 {
 	@ConfigSection(
@@ -35,7 +35,7 @@ public interface OverheadAdditionsConfig extends Config
 	@ConfigItem(
 		keyName = "duration",
 		name = "Message Duration",
-		description = "Overhead message duration is length of message x duration"
+		description = "Overhead message duration is length of message x duration. (min 120 cycles)"
 	)
 	default int duration()
 	{
